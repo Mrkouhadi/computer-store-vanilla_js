@@ -80,8 +80,8 @@ class Stock {
 
     static removeLaptop(lapId){
         const laptops = Stock.getLaptops();
-        // const newLapsList = laptops.filter(lap => lap.id != lapId)
-        localStorage.setItem('laptops', JSON.stringify(laptops));
+        const newLapsList = laptops.filter(lap => lap.id != lapId)
+        localStorage.setItem('laptops', JSON.stringify(newLapsList));
     }
 }
 
