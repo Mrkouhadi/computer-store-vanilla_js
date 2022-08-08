@@ -115,7 +115,6 @@ document.querySelector('#laptop-form').addEventListener('submit', (event) => {
     if(brand === '' || processor === '' || ram === '' || price === '' || id === ''){
         UI.showAlert(' You have to fill in all inputs of the form ! ', "danger");
     }else{
-
         // Instantiate laptop
         const laptop = new Laptop(brand, processor, ram, price, id);
 
