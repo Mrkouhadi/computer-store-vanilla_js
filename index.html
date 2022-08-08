@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+
+<title>Page Title</title>
+</head>
+<body>
+      <div class="container mt-4">
+          <h1 class="display-4 text-center">
+              <span class="text-primary">Computer</span>
+              <i class="fas fa-laptop text-primary"></i></br> Stock
+          </h1>
+          <form id="laptop-form">
+              <div class="form-group">
+                  <label class="brand">Brand</label>
+                  <input type="text" id="brand"
+                  class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label class="processor">Processor</label>
+                  <input type="text" id="processor"
+                  class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label class="ram">RAM</label>
+                  <input type="text" id="ram"
+                  class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label class="rpice">Price</label>
+                  <input type="number" id="price"
+                  class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label class="id">ID</label>
+                  <input type="number" id="id"
+                  class="form-control">
+              </div>
+              <input type="submit" value="add laptop"
+              class="btn btn-primary btn-block">
+          </form>
+          <table class="table table-hover mt-5">
+              <thead>
+                  <tr>
+                      <th>Brand</th>
+                      <th>Processor</th>
+                      <th>Ram</th>
+                      <th>Price</th>
+                      <th>id</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody id="laptop-list" ></tbody>
+          </table>
+      </div>
+    <script src="script.js" defere></script>
+  </body>
+</html>
