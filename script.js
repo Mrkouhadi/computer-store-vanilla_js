@@ -13,7 +13,7 @@ class Laptop {
 class UI {
     static displayLaptop() {
         const laptops = Stock.getLaptops();
-        laptops.forEach((laptop) =>UI.addLaptopToList(laptop));
+        laptops.forEach((laptop) => UI.addLaptopToList(laptop));
     }
     static addLaptopToList(laptop){
             const list = document.querySelector('#laptop-list');
@@ -21,13 +21,13 @@ class UI {
             const row = document.createElement('tr');
 
             row.innerHTML = `
-            <td>${laptop.brand}</td>
-            <td>${laptop.processor}</td>
-            <td>${laptop.ram} GB</td>
-            <td>${laptop.price} $</td>
-            <td>${laptop.id} </td>
-            <td><a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
-            `;
+                                <td>${laptop.brand}</td>
+                                <td>${laptop.processor}</td>
+                                <td>${laptop.ram} GB</td>
+                                <td>${laptop.price} $</td>
+                                <td>${laptop.id} </td>
+                                <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
+                            `
 
             list.appendChild(row);
     }
@@ -81,8 +81,8 @@ class Stock {
 
     static addLaptop(laptop) {
         const laptops = Stock.getLaptops();
-        laptops.push(laptop);
-        localStorage.setItem('laptops', JSON.stringify(laptops));
+        // laptops.push(laptop); // [...laptops, laptop]
+        localStorage.setItem('laptops', JSON.stringify([...laptops, laptop]));
     }
 
     static removeLaptop(id){
