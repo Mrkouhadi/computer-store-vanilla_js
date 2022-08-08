@@ -17,9 +17,7 @@ class UI {
     }
     static addLaptopToList(laptop){
             const list = document.querySelector('#laptop-list');
-
             const row = document.createElement('tr');
-
             row.innerHTML = `
                                 <td>${laptop.brand}</td>
                                 <td>${laptop.processor}</td>
@@ -28,7 +26,6 @@ class UI {
                                 <td>${laptop.id} </td>
                                 <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
                             `
-
             list.appendChild(row);
     }
     // method of removing a laptop when clicking the red x button
@@ -71,25 +68,19 @@ class Stock {
 
     static getLaptops() {
         let laptops;
-        if(localStorage.getItem('laptops') === null){
-            laptops = [];
-        }else{
-            laptops = JSON.parse(localStorage.getItem('laptops'));
-        }
+        localStorage.getItem('laptops') === null ? laptops = []
+                                                 : laptops = JSON.parse(localStorage.getItem('laptops'));
         return laptops;
     }
 
     static addLaptop(laptop) {
         const laptops = Stock.getLaptops();
-        // laptops.push(laptop); // [...laptops, laptop]
         localStorage.setItem('laptops', JSON.stringify([...laptops, laptop]));
     }
 
     static removeLaptop(lapId){
         const laptops = Stock.getLaptops();
-        const newLapsList = laptops.filter(lap =>{
-          return lap.id != lapId;
-        })
+        const newLapsList = laptops.filter(lap => lap.id != lapId)
         localStorage.setItem('laptops', JSON.stringify(newLapsList));
     }
 }
