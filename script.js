@@ -85,15 +85,12 @@ class Stock {
         localStorage.setItem('laptops', JSON.stringify([...laptops, laptop]));
     }
 
-    static removeLaptop(id){
+    static removeLaptop(lapId){
         const laptops = Stock.getLaptops();
-
-        laptops.forEach((laptop, index) => {
-            if(laptop.id === id){
-                laptops.splice(index, 1);
-            }
-        });
-        localStorage.setItem('laptops', JSON.stringify(laptops));
+        const newLapsList = laptops.filter(lap =>{
+          return lap.id != lapId;
+        })
+        localStorage.setItem('laptops', JSON.stringify(newLapsList));
     }
 }
 
